@@ -34,7 +34,20 @@ def main_menu():
 
 
 def task2_hashtags():
-    # Berkay
+
+    sentence = input()
+    x = sentence.split()
+    unique = []
+
+    for i in x:
+
+        if i not in unique:
+
+            unique.append(i)
+        
+            if i[0] == "#":
+                print(i)
+        
     pass
 
 
