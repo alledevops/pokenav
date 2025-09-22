@@ -81,8 +81,57 @@ def task5_pokemon_traits():
 
 
 def task6_zodiac():
-    # Berkay
+    month = int(input("Type your birth month: "))
+
+    match month:
+        case 1:
+            zodiac = "Capricorn"
+        case 2:
+            zodiac = "Aquarius"
+        case 3:
+            zodiac = "Pisces"
+        case 4:
+            zodiac = "Aries"
+        case 5:
+            zodiac = "Taurus"
+        case 6:
+            zodiac = "Gemini"
+        case 7:
+            zodiac = "Cancer"
+        case 8:
+            zodiac = "Leo"
+        case 9:
+            zodiac = "Virgo"
+        case 10:
+            zodiac = "Libra"
+        case 11:
+            zodiac = "Scorpio"
+        case 12:
+            zodiac = "Sagittarius"
+
+    match zodiac:
+
+        case "Cancer" | "Scorpio" | "Pisces":
+            element = "Water"
+            eeveelution = "Vaporeon"
+
+        case "Aries" | "Leo" | "Sagittarius":
+            element = "Fire"
+            eeveelution = "Flareon"
+
+        case "Taurus" | "Virgo" | "Capricorn":
+            element = "Earth"
+            eeveelution = "Leafeon"
+
+        case "Gemini" | "Libra" | "Aquarius":
+            element = "Air"
+            eeveelution = "Jolteon"
+
+    print(f"Zodiac sign: {zodiac}")
+    print(f"Element: {element}")
+    print(f"Eeveelution: {eeveelution}")
     pass
+
 
 
 def task7_bmi():
