@@ -35,9 +35,10 @@ def main_menu():
 
 def task2_hashtags():
 
-    sentence = input()
+    sentence = input("Type your post: ")
     x = sentence.split()
     unique = []
+    hashtag = []
 
     for i in x:
 
@@ -46,8 +47,12 @@ def task2_hashtags():
             unique.append(i)
         
             if i[0] == "#":
-                print(i)
-        
+                hashtag.append(i)
+
+    print(f"Hashtags found:")
+
+    for i in hashtag:
+        print(i)        
     pass
 
 
