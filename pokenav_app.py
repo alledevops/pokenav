@@ -57,7 +57,21 @@ def task3_palindrome():
 
 
 def task4_acronym():
-    # Berkay
+
+    name = input("Type your Pokemon name: ")
+    shortening_factor = int(input("Type your shortening factor: "))
+    shortening_factor_start = shortening_factor - 1
+    abbreviated_name = ""
+
+    while shortening_factor_start < len(name):
+        abbreviated_name =  abbreviated_name + name[shortening_factor_start]
+        abbreviated_name = abbreviated_name.upper()
+
+        shortening_factor_start += shortening_factor
+        
+    print(abbreviated_name)
+
+
     pass
 
 
