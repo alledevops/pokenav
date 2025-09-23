@@ -74,7 +74,7 @@ def task4_acronym():
 
         shortening_factor_start += shortening_factor
         
-    print(abbreviated_name)
+    print(f"Abbreviated Name: {abbreviated_name}")
 
 
     pass
