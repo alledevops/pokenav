@@ -57,6 +57,7 @@ def task2_hashtags():
 
 
 def task3_palindrome():
+
     name = input("Type your Pokemon name: ")
 
     original_name = name
@@ -81,7 +82,31 @@ def task3_palindrome():
         pass
 
 def task5_pokemon_traits():
-    # Mustafa
+
+    name = input("Type your Pokemon name: ")
+    poke_type = input("Type your Pokemon type: ")
+
+    pokemon_type_lower = poke_type.lower()
+
+    if pokemon_type_lower == "fire":
+        strong = "Grass"
+        weak = "Water"
+        formatted_type = "Fire"
+    elif pokemon_type_lower == "water":
+        strong = "Fire"
+        weak = "Grass"
+        formatted_type = "Water"
+    elif pokemon_type_lower == "grass":
+        strong = "Water"
+        weak = "Fire"
+        formatted_type = "Grass"
+    else:
+        #error handling
+        return
+
+    print(name + " is a " + formatted_type + "-type Pokemon! It is strong against " +
+          strong + "-type Pokemons and weak against " + weak + "-type Pokemons.")
+
     pass
 
 
