@@ -162,12 +162,26 @@ def task6_zodiac():
     print(f"Eeveelution: {eeveelution}")
     pass
 
-
-
 def task7_bmi():
-    # Mustafa
-    pass
+ 
+    height = float(input("Type height in meters: "))
+    weight = float(input("Type weight in kilograms: "))
 
+    #Calculate Body Mass Index(BMI)
+    bmi = weight / (height * height)
+
+    if bmi < 29:
+        category = "underweight"
+    elif bmi < 53:
+        category = "healthy"
+    elif bmi < 85:
+        category = "overweight"
+    else:
+        category = "obese"
+
+    print("BMI = {:.2f}. The Pokemon is {}.".format(bmi, category))
+
+    pass
 
 if __name__ == "__main__":
     main_menu()
