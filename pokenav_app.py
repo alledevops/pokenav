@@ -11,6 +11,7 @@ def main_menu():
         print("5. Get Pokemon traits")
         print("6. Match zodiac sign and element")
         print("7. BMI calculator")
+        print("8. Fitness tracker")
         choice = input("Type your option: ")
 
         if choice == "1":
@@ -28,10 +29,11 @@ def main_menu():
             task6_zodiac()
         elif choice == "7":
             task7_bmi()
+        elif choice == "8":
+            task8_fitness_tracker()
         else:
-
-            pass
-
+            # Error handling
+            print("Error - Invalid option. Please input a number between 1 and 8.")
 
 def task2_hashtags():
 
@@ -53,8 +55,6 @@ def task2_hashtags():
 
     for i in hashtag:
         print(i)        
-    pass
-
 
 def task3_palindrome():
 
@@ -79,8 +79,6 @@ def task3_palindrome():
     else:
         print("The name '" + original_name + "' is not a palindrome.")
 
-        pass
-
 def task5_pokemon_traits():
 
     name = input("Type your Pokemon name: ")
@@ -102,13 +100,11 @@ def task5_pokemon_traits():
         formatted_type = "Grass"
     else:
         #error handling
+        print("Error - The Pokemon type provided is not valid. Valid types: Water, Fire, Grass.")
         return
 
     print(name + " is a " + formatted_type + "-type Pokemon! It is strong against " +
           strong + "-type Pokemons and weak against " + weak + "-type Pokemons.")
-
-    pass
-
 
 def task6_zodiac():
     month = int(input("Type your birth month: "))
@@ -167,6 +163,17 @@ def task7_bmi():
     height = float(input("Type height in meters: "))
     weight = float(input("Type weight in kilograms: "))
 
+    # Error handling
+    if height <= 0 and weight <= 0:
+        print("Error - Height and weight must be positive numbers.")
+        return
+    elif height <= 0:
+        print("Error - Height must be a positive number.")
+        return
+    elif weight <= 0:
+        print("Error - Weight must be a positive number.")
+        return
+
     #Calculate Body Mass Index(BMI)
     bmi = weight / (height * height)
 
@@ -181,6 +188,7 @@ def task7_bmi():
 
     print("BMI = {:.2f}. The Pokemon is {}.".format(bmi, category))
 
+def task8_fitness_tracker():
     pass
 
 if __name__ == "__main__":
