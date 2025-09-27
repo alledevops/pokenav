@@ -57,28 +57,28 @@ def task2_hashtags():
 
 
 def task3_palindrome():
-    # Mustafa
-    pass
-
-
-def task4_acronym():
-
     name = input("Type your Pokemon name: ")
-    shortening_factor = int(input("Type your shortening factor: "))
-    shortening_factor_start = shortening_factor - 1
-    abbreviated_name = ""
 
-    while shortening_factor_start < len(name):
-        abbreviated_name =  abbreviated_name + name[shortening_factor_start]
-        abbreviated_name = abbreviated_name.upper()
+    original_name = name
+    name = name.lower()
 
-        shortening_factor_start += shortening_factor
-        
-    print(f"Abbreviated Name: {abbreviated_name}")
+    first_letter = 0
+    last_letter = len(name) - 1
+    is_palindrome = True
 
+    while first_letter < last_letter:
+        if name[first_letter] != name[last_letter]:
+            is_palindrome = False
+            break
+        first_letter = first_letter + 1
+        last_letter = last_letter - 1
 
-    pass
+    if is_palindrome:
+        print("The name '" + original_name + "' is a palindrome.")
+    else:
+        print("The name '" + original_name + "' is not a palindrome.")
 
+        pass
 
 def task5_pokemon_traits():
     # Mustafa
