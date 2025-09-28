@@ -1,5 +1,4 @@
-# pokenav
-
+#pokenav
 
 def main_menu():
     while True:
@@ -35,29 +34,32 @@ def main_menu():
             # Error handling
             print("Error - Invalid option. Please input a number between 1 and 8.")
 
+
 def task2_hashtags():
-
     sentence = input("Type your post: ")
-    x = sentence.split()
+    words = sentence.split()
+
     unique = []
-    hashtag = []
+    hashtags = []
 
-    for i in x:
+    for word in words:
+        if word not in unique:
+            unique.append(word)
 
-        if i not in unique:
+            if word[0] == "#":
+                hashtags.append(word)
 
-            unique.append(i)
-        
-            if i[0] == "#":
-                hashtag.append(i)
+    # Error handling
+    if len(hashtags) == 0:
+        print("No hashtags found.")
+        return
 
-    print(f"Hashtags found:")
+    print("Hashtags found:")
+    for tag in hashtags:
+        print(tag)     
 
-    for i in hashtag:
-        print(i)        
 
 def task3_palindrome():
-
     name = input("Type your Pokemon name: ")
 
     original_name = name
@@ -79,8 +81,8 @@ def task3_palindrome():
     else:
         print("The name '" + original_name + "' is not a palindrome.")
 
-def task4_acronym():
 
+def task4_acronym():
     name = input("Type your Pokemon name: ")
     shortening_factor = int(input("Type your shortening factor: "))
     shortening_factor_start = shortening_factor - 1
@@ -95,10 +97,7 @@ def task4_acronym():
     print(f"Abbreviated Name: {abbreviated_name}")
 
 
-    pass
-
 def task5_pokemon_traits():
-
     name = input("Type your Pokemon name: ")
     poke_type = input("Type your Pokemon type: ")
 
@@ -124,8 +123,14 @@ def task5_pokemon_traits():
     print(name + " is a " + formatted_type + "-type Pokemon! It is strong against " +
           strong + "-type Pokemons and weak against " + weak + "-type Pokemons.")
 
+
 def task6_zodiac():
     month = int(input("Type your birth month: "))
+
+    # Error handling
+    if month < 1 or month > 12:
+        print("Error - The month index provided is not valid. Choose between 1 and 12.")
+        return
 
     match month:
         case 1:
@@ -154,19 +159,15 @@ def task6_zodiac():
             zodiac = "Sagittarius"
 
     match zodiac:
-
         case "Cancer" | "Scorpio" | "Pisces":
             element = "Water"
             eeveelution = "Vaporeon"
-
         case "Aries" | "Leo" | "Sagittarius":
             element = "Fire"
             eeveelution = "Flareon"
-
         case "Taurus" | "Virgo" | "Capricorn":
             element = "Earth"
             eeveelution = "Leafeon"
-
         case "Gemini" | "Libra" | "Aquarius":
             element = "Air"
             eeveelution = "Jolteon"
@@ -174,10 +175,9 @@ def task6_zodiac():
     print(f"Zodiac sign: {zodiac}")
     print(f"Element: {element}")
     print(f"Eeveelution: {eeveelution}")
-    pass
+
 
 def task7_bmi():
- 
     height = float(input("Type height in meters: "))
     weight = float(input("Type weight in kilograms: "))
 
@@ -206,20 +206,24 @@ def task7_bmi():
 
     print("BMI = {:.2f}. The Pokemon is {}.".format(bmi, category))
 
+
 def task8_fitness_tracker():
-
-
     steps_input = input("Step count per day: ")
     steps = [int(x) for x in steps_input.split(",")]
 
+    # Error handling
+    if len(steps) != 7:
+        print("Error - Invalid input. The program needs 7 numbers; you typed " + str(len(steps)) + " numbers.")
+        return
+
     average_steps = sum(steps) / len(steps)
 
+    # Standard deviation
     variance = sum((x - average_steps) ** 2 for x in steps) / len(steps)
     std_steps = variance ** 0.5
 
-
-    average_steps = round(average_steps, 2)
-    std_steps = round(std_steps, 2)
+    avg_str = "{:.2f}".format(average_steps)
+    std_str = "{:.2f}".format(std_steps)
 
     week_days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
@@ -229,11 +233,8 @@ def task8_fitness_tracker():
     most_active_day = week_days[most_active_index]
     least_active_day = week_days[least_active_index]
 
-
-    print(f"Steps Statistics: {average_steps} + / - {std_steps} per day.")
-    print(f"Most active day: {most_active_day}. Least active day: {least_active_day}.")
-
-    pass
+    print("Steps Statistics: " + avg_str + " + / - " + std_str + " per day.")
+    print("Most active day: " + most_active_day + ". Least active day: " + least_active_day + ".")
 
 if __name__ == "__main__":
     main_menu()
