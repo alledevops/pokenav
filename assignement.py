@@ -17,25 +17,25 @@ def main_menu():
             print("Thank you for playing! See you next time!")
             break
         elif choice == "2":
-            task2_hashtags()
+            identify_hashtags()
         elif choice == "3":
-            task3_palindrome()
+            detect_palindrome()
         elif choice == "4":
-            task4_acronym()
+            create_acronym()
         elif choice == "5":
-            task5_pokemon_traits()
+            get_pokemon_traits()
         elif choice == "6":
-            task6_zodiac()
+            match_zodiac_sign()
         elif choice == "7":
-            task7_bmi()
+            bmi_calculator()
         elif choice == "8":
-            task8_fitness_tracker()
+            fitness_tracker()
         else:
             # Error handling
             print("Error - Invalid option. Please input a number between 1 and 8.")
 
 
-def task2_hashtags():
+def identify_hashtags():
     sentence = input("Type your post: ")
     words = sentence.split()
 
@@ -59,7 +59,7 @@ def task2_hashtags():
         print(tag)     
 
 
-def task3_palindrome():
+def detect_palindrome():
     name = input("Type your Pokemon name: ")
 
     original_name = name
@@ -82,7 +82,7 @@ def task3_palindrome():
         print("The name '" + original_name + "' is not a palindrome.")
 
 
-def task4_acronym():
+def create_acronym():
     name = input("Type your Pokemon name: ")
     shortening_factor = int(input("Type your shortening factor: "))
     shortening_factor_start = shortening_factor - 1
@@ -97,7 +97,7 @@ def task4_acronym():
     print(f"Abbreviated Name: {abbreviated_name}")
 
 
-def task5_pokemon_traits():
+def get_pokemon_traits():
     name = input("Type your Pokemon name: ")
     poke_type = input("Type your Pokemon type: ")
 
@@ -124,7 +124,7 @@ def task5_pokemon_traits():
           strong + "-type Pokemons and weak against " + weak + "-type Pokemons.")
 
 
-def task6_zodiac():
+def match_zodiac_sign():
     month = int(input("Type your birth month: "))
 
     # Error handling
@@ -177,7 +177,7 @@ def task6_zodiac():
     print(f"Eeveelution: {eeveelution}")
 
 
-def task7_bmi():
+def bmi_calculator():
     height = float(input("Type height in meters: "))
     weight = float(input("Type weight in kilograms: "))
 
@@ -207,7 +207,7 @@ def task7_bmi():
     print("BMI = {:.2f}. The Pokemon is {}.".format(bmi, category))
 
 
-def task8_fitness_tracker():
+def fitness_tracker():
     steps_input = input("Step count per day: ")
     steps = [int(x) for x in steps_input.split(",")]
 
