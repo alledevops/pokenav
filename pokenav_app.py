@@ -1,16 +1,17 @@
-#pokenav
-
 def main_menu():
+    print()
     while True:
         print("Welcome to the Main Menu. Choose one of the options below:")
-        print("1. Exit")
-        print("2. Identify hashtags")
-        print("3. Detect a palindrome")
-        print("4. Create an acronym")
-        print("5. Get Pokemon traits")
-        print("6. Match zodiac sign and element")
-        print("7. BMI calculator")
-        print("8. Fitness tracker")
+        print()
+        print("    1. Exit")
+        print("    2. Identify hashtags")
+        print("    3. Detect a palindrome")
+        print("    4. Create an acronym")
+        print("    5. Get Pokemon traits")
+        print("    6. Match zodiac sign and element")
+        print("    7. BMI calculator")
+        print("    8. Fitness and health tracker")
+        print()
         choice = input("Type your option: ")
 
         if choice == "1":
@@ -54,9 +55,12 @@ def identify_hashtags():
         print("No hashtags found.")
         return
 
-    print("Hashtags found:")
-    for tag in hashtags:
-        print(tag)     
+    print("Hashtags found:", end=" ")
+    for i in range(len(hashtags)):
+        if i == 0:
+            print(hashtags[i])
+        else:
+            print(hashtags[i])     
 
 
 def detect_palindrome():
@@ -94,7 +98,7 @@ def create_acronym():
 
         shortening_factor_start += shortening_factor
         
-    print(f"Abbreviated Name: {abbreviated_name}")
+    print("Abbreviated name: " + abbreviated_name)
 
 
 def get_pokemon_traits():
@@ -121,7 +125,7 @@ def get_pokemon_traits():
         return
 
     print(name + " is a " + formatted_type + "-type Pokemon! It is strong against " +
-          strong + "-type Pokemons and weak against " + weak + "-type Pokemons.")
+          strong + "-typePokemons and weak against " + weak + "-type Pokemons.")
 
 
 def match_zodiac_sign():
@@ -178,8 +182,8 @@ def match_zodiac_sign():
 
 
 def bmi_calculator():
-    height = float(input("Type height in meters: "))
-    weight = float(input("Type weight in kilograms: "))
+    height = float(input("Type your Pokemon's height in meters: "))
+    weight = float(input("Type your Pokemon's weight in kilograms: "))
 
     # Error handling
     if height <= 0 and weight <= 0:
